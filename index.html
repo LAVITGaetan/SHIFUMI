@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifumi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
+</head>
+
+<body onload="gamertag()">
+
+    <div class="titre">
+        <h1>Shifumi</h1>
+    </div>
+
+    <!-- Espace de duel -->
+
+    <div class="duel">
+
+        <!-- Cadre ordinateur -->
+
+        <div class="duel_utilisateur">
+            <div class="utilisateur_compteur">
+                <div class="utilisateur_compteur-1" id="score1-utilisateur"></div>
+                <div class="utilisateur_compteur-2" id="score2-utilisateur"></div>
+                <div class="utilisateur_compteur-3" id="score3-utilisateur"></div>
+            </div>
+            <div class="utilisateur_nom">
+                <h2 id="gamertag" onclick="modifyGamertag();">USERNAME</h2>
+            </div>
+            <div class="utilisateur_signe">
+                <img src="images/uncertainty.svg" alt="" id="utilisateur_signe">
+            </div>
+        </div>
+
+        <!-- Cadre infos de manche -->
+
+        <div class="duel_manche">
+            <span>Score</span>
+            <div class="manche_score">
+                <div id="manche_score__utilisateur">0</div>
+                <div id="manche_score__ordinateur">0</div>
+            </div>
+            <span id="resultat_final"></span>
+            <div class="manche_compteur">
+                <span id="manche_compteur"></span>
+            </div>
+            <button id="reset_button" onclick="restartGame();">Rejouer</button>
+        </div>
+
+        <!-- Cadre ordinateur -->
+
+        <div class="duel_ordinateur">
+            <div class="ordinateur_compteur">
+                <div class="ordinateur_compteur-1" id="score1-ordinateur"></div>
+                <div class="ordinateur_compteur-2" id="score2-ordinateur"></div>
+                <div class="ordinateur_compteur-3" id="score3-ordinateur"></div>
+            </div>
+            <div class="ordinateur_nom">
+                <h2 id="ordinateur_nom">IA</h2>
+            </div>
+            <div class="ordinateur_signe">
+                <img src="images/uncertainty.svg" alt="" id="ordinateur_signe">
+            </div>
+        </div>
+    </div>
+
+    <!-- Choix des signes -->
+    <div class="signe">
+        <div class="signe_pierre">
+            <img src="images/rock.svg" alt="une image de signe pierre"
+                onclick="changeImageRock() ;changeImageIA(); changeMancheCompteur(); modifierScore(); resetGame(); gagnantPartie(); afficherScore();endOfGame()">
+        </div>
+        <div class="signe_feuille">
+            <img src="images/paper.svg" alt="une image de signe feiulle"
+                onclick="changeImagePaper() ;changeImageIA(); changeMancheCompteur(); modifierScore(); resetGame(); gagnantPartie(); afficherScore();endOfGame()">
+        </div>
+        <div class="signe_ciseaux">
+            <img src="images/scissors.svg" alt="une image de signe ciseaux"
+                onclick="changeImageScissors() ;changeImageIA(); changeMancheCompteur(); modifierScore(); resetGame(); gagnantPartie(); afficherScore();endOfGame()">
+        </div>
+    </div>
+
+</body>
+
+</html>
